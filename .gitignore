@@ -1,0 +1,31 @@
+# 构建产物
+bin/
+web/dist/
+web/node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 环境配置（覆盖默认配置）
+config.local.yaml
+.env
+.env.local
+
+# 日志
+*.log
+logs/
+
+# 旧 PHP 项目（保留但不跟踪变更）
+# app/
+# includes/
+# public/
+# templates/
+# sql/
+# install/
+
+# OS
+.DS_Store
+Thumbs.db

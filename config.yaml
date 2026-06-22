@@ -1,0 +1,70 @@
+# 服务配置
+server:
+  host: "0.0.0.0"
+  port: 8080
+  mode: "debug"  # debug | release | test
+
+# PostgreSQL 数据库
+database:
+  host: "127.0.0.1"
+  port: 5432
+  user: "dnspanel"
+  password: "dnspanel"
+  dbname: "dnspanel"
+  sslmode: "disable"
+  max_open_conns: 25
+  max_idle_conns: 10
+
+# Redis 缓存
+redis:
+  addr: "127.0.0.1:6379"
+  password: ""
+  db: 0
+  pool_size: 10
+
+# JWT 认证
+auth:
+  jwt_secret: "change-me-in-production"
+  jwt_ttl: 24h
+  refresh_ttl: 168h
+  issuer: "dns-panel"
+
+# 插件配置
+plugins:
+  dns:
+    cloudflare:
+      api_token: ""
+    aliyun:
+      access_key_id: ""
+      access_key_secret: ""
+    tencent:
+      secret_id: ""
+      secret_key: ""
+    bind:
+      server: ""
+      key_name: ""
+      key: ""
+  notify:
+    email:
+      smtp_host: ""
+      smtp_port: 465
+      smtp_user: ""
+      smtp_pass: ""
+      from_name: "DNS Panel"
+    sms:
+      provider: "aliyun"
+      access_key_id: ""
+      access_key_secret: ""
+      sign_name: ""
+      template_code: ""
+
+# 监控配置
+monitor:
+  health_check_interval: 5m
+  ssl_check_interval: 1h
+  alert_cooldown: 30m
+
+# 日志
+log:
+  level: "info"  # trace | debug | info | warn | error
+  format: "json"  # json | text
